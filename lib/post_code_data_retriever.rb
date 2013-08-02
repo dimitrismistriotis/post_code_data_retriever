@@ -1,4 +1,4 @@
-require "post_code_data_retriever/version"
+require 'post_code_data_retriever/version'
 require 'retrieval_result'
 require 'post_code_validator'
 

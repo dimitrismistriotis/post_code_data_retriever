@@ -1,0 +1,4 @@
+# Strong belief that modern monitors should allow this.
+LineLength:
+  Enabled: true
+  Max: 120

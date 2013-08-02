@@ -1,4 +1,4 @@
-require "spec_helper"
+require 'spec_helper'
 require 'retrieval_result'
 
 describe RetrievalResult do
