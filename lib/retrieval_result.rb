@@ -3,9 +3,9 @@ class RetrievalResult
               :easting, :northing, :constituency_title,
               :district_title, :ward_title
 
-  def initialize
-    @result_code = 0
-    @error = ''
+  def initialize(result_code = 0, error = '')
+    @result_code = result_code
+    @error = error
     @latitude = nil
     @easting = nil
     @northing = nil
