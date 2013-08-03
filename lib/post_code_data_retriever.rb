@@ -17,16 +17,15 @@ module PostCodeDataRetriever
 
     response = nil
     begin
-      puts "http://uk-postcodes.com/postcode/#{post_code}.json"
+      # puts "http://uk-postcodes.com/postcode/#{post_code}.json"
       response = HTTParty.get("http://uk-postcodes.com/postcode/#{post_code}.json")
     rescue StandardError => se
-      puts se.message
-      puts se.backtrace[0..10].join("\n")
-      puts 'error'
+      # puts se.message
+      # puts se.backtrace[0..10].join("\n")
       return RetrievalResult.new(-2, 'Connection error while retrieving post codes from uk-postcodes.com')
     end
 
-    puts response
+    # puts response
 
     RetrievalResult.new
   end
