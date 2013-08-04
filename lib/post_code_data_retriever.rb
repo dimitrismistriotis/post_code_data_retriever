@@ -41,7 +41,6 @@ module PostCodeDataRetriever
   def self.map_uk_postcodes_response_to_result(input)
     geoloc_json_data = JSON.parse(input)
     # puts geoloc_json_data
-    error = ''
     latitude = geoloc_json_data['geo']['lat']
     longitude = geoloc_json_data['geo']['lng']
     easting = geoloc_json_data['geo']['easting']
@@ -50,7 +49,7 @@ module PostCodeDataRetriever
     district_title = geoloc_json_data['administrative']['district']['title']
     ward_title = geoloc_json_data['administrative']['ward']['title']
 
-    RetrievalResult.new(0, error, latitude, longitude, easting, northing,
-      constituency_title, district_title, ward_title)
+    RetrievalResult.new(0, '', latitude, longitude, easting, northing,
+                        constituency_title, district_title, ward_title)
   end
 end
