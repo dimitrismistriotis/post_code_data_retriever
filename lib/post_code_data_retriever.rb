@@ -1,6 +1,7 @@
 require 'post_code_data_retriever/version'
 require 'retrieval_result'
 require 'post_code_validator'
+require 'json'
 require 'httparty'
 
 module PostCodeDataRetriever
@@ -26,7 +27,22 @@ module PostCodeDataRetriever
     end
 
     # puts response
+    case response.code
+    when 200
+      return map_uk_postcodes_response_to_result(response.body)
+    end
+
 
     RetrievalResult.new
+  end
+
+  ##
+  # Maps response of uk-postcodes.com to result returned from this module
+  #
+  def self.map_uk_postcodes_response_to_result(input)
+    geoloc_json_data = JSON.parse(input)
+    # puts geoloc_json_data
+
+    RetrievalResult.new(-999, 'Not implemented yet.')
   end
 end

@@ -6,4 +6,5 @@ gemspec
 # TODO: put rspec on development / testing not production if possible.
 gem 'rspec'
 
+gem 'json'
 gem 'httparty'
