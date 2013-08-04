@@ -45,6 +45,7 @@ describe PostCodeDataRetriever do
       it 'map returned result' do
         process_result = subject.get_coordinates('SE16 5DY')
         expect(process_result.result_code).to equal(0)
+        expect(process_result.latitude.to_s).to eq('51.505821')
       end
     end
   end
