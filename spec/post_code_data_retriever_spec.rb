@@ -10,13 +10,21 @@ describe PostCodeDataRetriever do
     end
   end
 
-  context 'retrieve data from uk-postcodes on valid post code' do
+  context 'Data retrieval and parsing' do
     before do
-      results = IO.read("#{File.dirname(__FILE__)}/data/uk-postcodes_response-se165dy.json")
+
+      mocked_response = Object.new
+      def mocked_response.code
+        return 200
+      end
+      def mocked_response.body
+        return IO.read("#{File.dirname(__FILE__)}/data/uk-postcodes_response-se165dy.json")
+      end
+
       HTTParty.
         should_receive(:get).
         with('http://uk-postcodes.com/postcode/SE165DY.json')
-        .and_return({ code: 200, body: results })
+        .and_return(mocked_response)
     end
 
     it 'should issue an http request on legal post code' do
