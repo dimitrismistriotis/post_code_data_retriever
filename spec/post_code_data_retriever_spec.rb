@@ -27,16 +27,25 @@ describe PostCodeDataRetriever do
         .and_return(mocked_response)
     end
 
-    it 'should issue an http request on legal post code' do
-      process_result = subject.get_coordinates('SE16 5DY')
-      expect(process_result.result_code).to equal(0)
-      expect(process_result.error).not_to eq('Input provided is not a valid UK post code.')
+    context 'retrieve data from uk-postcodes on valid post code' do
+      it 'should issue an http request on legal post code' do
+        process_result = subject.get_coordinates('SE16 5DY')
+        expect(process_result.result_code).to equal(0)
+        expect(process_result.error).not_to eq('Input provided is not a valid UK post code.')
+      end
+
+      it 'should issue an http request on legal not formatted post code' do
+        process_result = subject.get_coordinates('se165dy')
+        expect(process_result.result_code).to equal(0)
+        expect(process_result.error).not_to eq('Input provided is not a valid UK post code.')
+      end
     end
 
-    it 'should issue an http request on legal not formatted post code' do
-      process_result = subject.get_coordinates('se165dy')
-      expect(process_result.result_code).to equal(0)
-      expect(process_result.error).not_to eq('Input provided is not a valid UK post code.')
+    context 'Mapping retrieved result' do
+      it 'map returned result' do
+        process_result = subject.get_coordinates('SE16 5DY')
+        expect(process_result.result_code).to equal(0)
+      end
     end
   end
 end
