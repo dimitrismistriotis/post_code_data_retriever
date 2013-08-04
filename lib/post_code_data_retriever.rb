@@ -21,9 +21,9 @@ module PostCodeDataRetriever
       # puts "http://uk-postcodes.com/postcode/#{post_code}.json"
       response = HTTParty.get("http://uk-postcodes.com/postcode/#{post_code}.json")
     rescue StandardError => se
-      # puts se.message
       # puts se.backtrace[0..10].join("\n")
-      return RetrievalResult.new(-2, 'Connection error while retrieving post codes from uk-postcodes.com')
+      return RetrievalResult.new(
+        -2, "Connection error while retrieving post codes from uk-postcodes.com (#{se.message})")
     end
 
     # puts response
@@ -31,7 +31,6 @@ module PostCodeDataRetriever
     when 200
       return map_uk_postcodes_response_to_result(response.body)
     end
-
 
     RetrievalResult.new
   end
