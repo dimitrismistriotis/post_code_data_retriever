@@ -1,6 +1,10 @@
 # PostCodeDataRetriever
 
-TODO: Write a gem description
+Wanted to write a wrapper for United Kingdom postcode retrieval as part
+of a rails application. The intention is to create a library for suppling UK
+post code data for different uses. Currently all data is from the
+excellent [http://uk-postcodes.com/](http://uk-postcodes.com/), while
+considering to include other sources in the future such as google maps.
 
 ## Installation
 
