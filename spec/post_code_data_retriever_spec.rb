@@ -10,7 +10,7 @@ describe PostCodeDataRetriever do
     end
   end
 
-  context 'Data retrieval and parsing' do
+  context 'Data retrieval and parsing for existing post code' do
     before do
 
       mocked_response = Object.new
@@ -48,5 +48,26 @@ describe PostCodeDataRetriever do
         expect(process_result.latitude.to_s).to eq('51.505821')
       end
     end
+  end
+
+  context 'Response for valid but non-exitant post code' do
+    # http://uk-postcodes.com/postcode/SE165DG.json
+    before do
+
+      mocked_response = Object.new
+      def mocked_response.code() 404 end
+      def mocked_response.body() '' end
+
+      HTTParty
+        .should_receive(:get)
+        .with('http://uk-postcodes.com/postcode/SE165DG.json')
+        .and_return(mocked_response)
+    end
+
+    it 'return error with non existent flag' do
+      process_result = subject.get_coordinates('SE16 5DG')
+      expect(process_result.result_code).to equal(-4)
+    end
+
   end
 end

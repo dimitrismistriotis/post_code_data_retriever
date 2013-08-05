@@ -30,6 +30,9 @@ module PostCodeDataRetriever
     case response.code
     when 200
       return map_uk_postcodes_response_to_result(response.body)
+    when 404
+      return RetrievalResult.new(
+        -4, "Post code provided(#{post_code}) does not map to existing data.")
     end
 
     RetrievalResult.new
