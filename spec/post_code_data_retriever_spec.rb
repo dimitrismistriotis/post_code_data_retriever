@@ -21,9 +21,9 @@ describe PostCodeDataRetriever do
         return IO.read("#{File.dirname(__FILE__)}/data/uk-postcodes_response-se165dy.json")
       end
 
-      HTTParty.
-        should_receive(:get).
-        with('http://uk-postcodes.com/postcode/SE165DY.json')
+      HTTParty
+        .should_receive(:get)
+        .with('http://uk-postcodes.com/postcode/SE165DY.json')
         .and_return(mocked_response)
     end
 
