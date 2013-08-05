@@ -18,7 +18,30 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Require the gem if not done from it's environment
+
+  post_code_data = PostCodeDataRetriever.get_coordinates('WC1B3DG')
+
+### Return values
+Returns instance of RetrievalResult class with the following attributes:
+
+* result_code: 0 correct negative for error, see below fow details.
+* error: Description of error (for negative values of result code).
+* latitude
+* longitude
+* easting
+* northing
+* constituency_title
+* district_title
+* ward_title
+
+One of the following:
+
+*  0: All OK
+* -1: Invalid post code provided.
+* -2: Connection error.
+* -4: Correct post code, but for non-existing area.
+
 
 ## Contributing
 
