@@ -6,8 +6,10 @@ gemspec
 group :development do
   gem 'rspec'
 end
+
 group :test do
-  gem 'rake'
+  gem 'webmock'
+  gem 'vcr'
 end
 
 gem 'json'

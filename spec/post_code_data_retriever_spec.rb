@@ -68,6 +68,15 @@ describe PostCodeDataRetriever do
       process_result = subject.get_coordinates('SE16 5DG')
       expect(process_result.result_code).to equal(-4)
     end
+  end
 
+  context 'Full integration' do
+    it 'should dispatch HTTP request with correct input' do
+      VCR.use_cassette('se163ln_response') do
+        response = Net::HTTP.get_response(
+          URI('http://uk-postcodes.com/postcode/SE163LN.json'))
+        expect(response.body).to  match /SE16 3LN/
+      end
+    end
   end
 end

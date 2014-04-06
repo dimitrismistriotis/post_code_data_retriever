@@ -1,0 +1,46 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://uk-postcodes.com/postcode/SE163LN.json
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+      User-Agent:
+      - Ruby
+      Host:
+      - uk-postcodes.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.4.4
+      Date:
+      - Sun, 06 Apr 2014 19:17:20 GMT
+      Content-Type:
+      - application/octet-stream
+      Content-Length:
+      - '565'
+      Last-Modified:
+      - Thu, 20 Mar 2014 13:09:45 GMT
+      Connection:
+      - keep-alive
+      Etag:
+      - '"532ae899-235"'
+      Accept-Ranges:
+      - bytes
+    body:
+      encoding: UTF-8
+      string: '{"postcode":"SE16 3LN","geo":{"lat":51.4866709120185,"lng":-0.05103823334361623,"easting":535416.0,"northing":178214.0,"geohash":"http://geohash.org/gcpuyufgdep5"},"administrative":{"council":{"title":"Lewisham","uri":"http://statistics.data.gov.uk/id/statistical-geography/E09000023","code":"E09000023"},"ward":{"title":"New
+        Cross","uri":"http://statistics.data.gov.uk/id/statistical-geography/E05000449","code":"E05000449"},"constituency":{"title":"Lewisham,
+        Deptford","uri":"http://statistics.data.gov.uk/id/statistical-geography/E14000789","code":"E14000789"}}}'
+    http_version: 
+  recorded_at: Sun, 06 Apr 2014 19:17:19 GMT
+recorded_with: VCR 2.9.0
