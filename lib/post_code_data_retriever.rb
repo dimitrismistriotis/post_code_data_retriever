@@ -49,7 +49,14 @@ module PostCodeDataRetriever
     easting = geoloc_json_data['geo']['easting']
     northing = geoloc_json_data['geo']['northing']
     constituency_title = geoloc_json_data['administrative']['constituency']['title']
-    district_title = geoloc_json_data['administrative']['district']['title']
+    if geoloc_json_data['administrative']['district']
+      district_title = geoloc_json_data['administrative']['district']['title']
+    elsif geoloc_json_data['administrative']['council']
+      district_title = geoloc_json_data['administrative']['council']['title']
+    else
+      district_title = ''
+    end
+
     ward_title = geoloc_json_data['administrative']['ward']['title']
 
     RetrievalResult.new(0, '', latitude, longitude, easting, northing,

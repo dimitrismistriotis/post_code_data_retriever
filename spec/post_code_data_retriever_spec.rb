@@ -70,12 +70,11 @@ describe PostCodeDataRetriever do
     end
   end
 
-  context 'Full integration' do
+  context 'Intgration for existent post code' do
     it 'should dispatch HTTP request with correct input' do
       VCR.use_cassette('se163ln_response') do
-        response = Net::HTTP.get_response(
-          URI('http://uk-postcodes.com/postcode/SE163LN.json'))
-        expect(response.body).to  match /SE16 3LN/
+        post_code_data = PostCodeDataRetriever.get_coordinates('SE163LN')
+        expect(post_code_data.result_code).to equal(0)
       end
     end
   end
