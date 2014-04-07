@@ -1,0 +1,38 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://uk-postcodes.com/postcode/SE165DY.json
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.4.4
+      Date:
+      - Mon, 07 Apr 2014 07:08:44 GMT
+      Content-Type:
+      - application/octet-stream
+      Content-Length:
+      - '581'
+      Last-Modified:
+      - Thu, 20 Mar 2014 13:12:07 GMT
+      Connection:
+      - keep-alive
+      Etag:
+      - '"532ae927-245"'
+      Accept-Ranges:
+      - bytes
+    body:
+      encoding: UTF-8
+      string: '{"postcode":"SE16 5DY","geo":{"lat":51.505822348111835,"lng":-0.03470168183955026,"easting":536493.0,"northing":180374.0,"geohash":"http://geohash.org/gcpvp0qepmht"},"administrative":{"council":{"title":"Southwark","uri":"http://statistics.data.gov.uk/id/statistical-geography/E09000028","code":"E09000028"},"ward":{"title":"Surrey
+        Docks","uri":"http://statistics.data.gov.uk/id/statistical-geography/E05000552","code":"E05000552"},"constituency":{"title":"Bermondsey
+        and Old Southwark","uri":"http://statistics.data.gov.uk/id/statistical-geography/E14000553","code":"E14000553"}}}'
+    http_version: 
+  recorded_at: Mon, 07 Apr 2014 07:08:44 GMT
+recorded_with: VCR 2.9.0

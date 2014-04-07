@@ -1,0 +1,44 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://uk-postcodes.com/postcode/SE165DG.json
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Status:
+      - 404 Not Found
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - d340b83384b861fb564e4051dfc9bc64
+      X-Runtime:
+      - '0.012512'
+      Date:
+      - Mon, 07 Apr 2014 07:03:37 GMT
+      X-Rack-Cache:
+      - miss
+      X-Powered-By:
+      - Phusion Passenger 4.0.29
+      Server:
+      - nginx/1.4.4 + Phusion Passenger 4.0.29
+    body:
+      encoding: UTF-8
+      string: '{"code":404,"error":"Postcode SE165DG cannot be found"}'
+    http_version: 
+  recorded_at: Mon, 07 Apr 2014 07:03:37 GMT
+recorded_with: VCR 2.9.0
